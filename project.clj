@@ -1,6 +1,6 @@
-(defproject clj-kafka/clj-kafka "0.4.0-SNAPSHOT"
+(defproject org.clojars.joshdover/clj-kafka "0.5.0"
   :min-lein-version "2.0.0"
-  :url "https://github.com/pingles/clj-kafka"
+  :url "https://github.com/joshdover/clj-kafka"
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :dependencies [[org.clojure/clojure "1.8.0"]

@@ -33,6 +33,8 @@
 (defn string-serializer [] (StringSerializer.))
 (defn byte-array-serializer [] (ByteArraySerializer.))
 
+(def default-serializer (string-serializer))
+
 (defn producer
   "Return a `KafkaProducer` for publishing records to Kafka.
   `KafkaProducer` instances are thread-safe and should generally be
@@ -40,7 +42,7 @@
 
   For details on usage and available config options, see: http://kafka.apache.org/090/javadoc/org/apache/kafka/clients/producer/ProducerConfig.html"
   ([^java.util.Map config]
-   (KafkaProducer. config))
+   (KafkaProducer. config (string-serializer) (string-serializer)))
   ([^java.util.Map config ^Serializer key-serializer ^Serializer value-serializer]
    (KafkaProducer. config key-serializer value-serializer)))
 
